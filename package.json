@@ -1,9 +1,9 @@
 {
   "name": "dsh-balance-simple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
-  "description": "Live DeepSeek open-platform balance, usage, and peak/off-peak pricing countdown above the sidebar account avatar, with remote Chinese holiday calendars and authoritative time sync.",
+  "description": "A simple, information-dense status card for the DSH sidebar: DeepSeek balance, monthly usage, and peak/off-peak countdown at a glance.",
   "license": "MIT",
   "author": "lamp23333",
   "repository": {

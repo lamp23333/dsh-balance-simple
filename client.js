@@ -450,8 +450,8 @@ window.__ModuleLoader__.load({
   gap: 1px;
   border: 0;
   border-radius: 14px;
-  --dsu-bg: color-mix(in srgb, var(--dsw-specific-sidebar-fill, var(--dsw-alias-bg-layer-1)) 90%, #000);
-  --dsu-brightness: 0.9;
+  --dsu-bg: color-mix(in srgb, var(--dsw-specific-sidebar-fill, var(--dsw-alias-bg-layer-1)) 94%, #000);
+  --dsu-brightness: 0.95;
   background: var(--dsu-bg);
   box-shadow: none;
   -webkit-backdrop-filter: none;
