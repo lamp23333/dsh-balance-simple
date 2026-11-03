@@ -865,7 +865,16 @@ body[data-ds-dark-theme] .dsu-card:not(.dsu-compact)::before {
           if (current.signal.aborted || !payload || payload.ok !== true) return;
           const epochMs = Number(payload.epochMs);
           if (!Number.isFinite(epochMs)) return;
-          const offset = epochMs - Date.now();
+          /*
+           * epochMs is the authoritative clock reading captured when the Host
+           * resolved NTP. The Host caches that payload for six hours, so using
+           * Date.now() here would treat a cached reading as current and shift
+           * the countdown backwards by the age of the cache. Anchor the offset
+           * to the payload's fetch time instead.
+           */
+          const fetchedAt = Number(payload.fetchedAt);
+          const anchor = Number.isFinite(fetchedAt) && fetchedAt > 0 ? fetchedAt : Date.now();
+          const offset = epochMs - anchor;
           if (!Number.isFinite(offset) || Math.abs(offset) > 7 * 24 * 60 * 60 * 1000) return;
           setClockOffset(offset);
         } catch {
