@@ -1,0 +1,54 @@
+{
+  "name": "dsh-balance-simple",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Live DeepSeek open-platform balance, usage, and peak/off-peak pricing countdown above the sidebar account avatar, with remote Chinese holiday calendars and authoritative time sync.",
+  "license": "MIT",
+  "author": "lamp23333",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamp23333/dsh-balance-simple.git"
+  },
+  "homepage": "https://github.com/lamp23333/dsh-balance-simple#readme",
+  "bugs": {
+    "url": "https://github.com/lamp23333/dsh-balance-simple/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "balance",
+    "usage",
+    "sidebar",
+    "cordis"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/*.png"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

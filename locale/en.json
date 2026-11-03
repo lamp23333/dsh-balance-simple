@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DSH Balance",
+    "description": "Shows live open-platform balance and usage for the DeepSeek account behind the current API, plus the peak/off-peak pricing countdown above the sidebar account avatar. Holiday calendars come from public calendar APIs; time is corrected by NTP for the device time zone."
+  }
+}
